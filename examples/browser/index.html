@@ -1,0 +1,13 @@
+<head>
+</head>
+<body>
+    <script src="/webrtc-connect.min.js"></script>
+    <script> 
+        rtcc.connect({url: 'http://localhost', port: 9999}, function(err, channel) {
+            if (err)
+                return console.log('err', err);
+            console.log('wooo')
+            channel.send('hey');
+    }); 
+    </script>
+</body>

@@ -1,0 +1,50 @@
+{
+  "name": "webrtc-connect",
+  "version": "0.0.0",
+  "description": "Establish WebRTC Data Channels between browser-node and node-node with a TCP/HTTP/WebSockets like interface",
+  "main": "src/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "npm run test-node && npm run test-browser",
+    "test-browser": "zuul -- test/*.js",
+    "test-browser-local": "zuul --local -- test/*.js",
+    "test-node": "tape test/*.js",
+    "build": "./node_modules/.bin/browserify -s rtcc -r ./src/ | ./node_modules/.bin/uglifyjs -m > webrtc-connect.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/diasdavid/webrtc-connect"
+  },
+  "keywords": [
+    "webrtc",
+    "p2p",
+    "data channel",
+    "data channels",
+    "stream",
+    "peer-to-peer",
+    "webrtc stream",
+    "peer"
+  ],
+  "author": "David Dias <mail@daviddias.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diasdavid/webrtc-connect/issues"
+  },
+  "homepage": "https://github.com/diasdavid/webrtc-connect",
+  "browser": {
+    "http": "xhr"
+  },
+  "dependencies": {
+    "corsify": "^2.1.0",
+    "request": "^2.55.0",
+    "simple-peer": "^5.9.0",
+    "wrtc": "0.0.55",
+    "xhr": "^2.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.1",
+    "uglifyjs": "^2.4.10"
+  }
+}
