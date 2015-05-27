@@ -7,7 +7,7 @@ webrtc-connect
 
 # Why no use WebSockets instead?
 
-WebRTC provides a set of different features, one of them being confidentiality, that is, WebRTC Data Channels are encrypted by default[1][1] and can't be eavesdropped, why for WebSockets, we need first to set up TLS/SSL[2][2].
+WebRTC provides a set of different features, one of them being confidentiality, that is, [WebRTC Data Channels are encrypted by default][1] and can't be eavesdropped, while for WebSockets, [we need first to set up TLS/SSL][2].
 
 # Usage
 
