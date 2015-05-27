@@ -7,15 +7,17 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "npm run test-node && npm run test-browser",
+    "test": "npm run test-node && npm run test-cov",
     "codestyle": "./node_modules/.bin/standard --format",
     "test-browser": "zuul -- test/*.js",
     "test-browser-local": "zuul --local -- test/*.js",
-    "test-node": "tape test/*.js",
+    "test-cov": "node ./node_modules/.bin/lab -t 85 tests/node-test.js",
+    "test-node": "node ./node_modules/.bin/lab tests/node-test.js",
     "build": "./node_modules/.bin/browserify -s rtcc -r ./src/ | ./node_modules/.bin/uglifyjs -m > webrtc-connect.min.js"
   },
   "pre-commit": [
-    "codestyle"
+    "codestyle",
+    "test"
   ],
   "repository": {
     "type": "git",
@@ -49,6 +51,8 @@
   },
   "devDependencies": {
     "browserify": "^10.2.1",
+    "code": "^1.4.0",
+    "lab": "^5.9.0",
     "precommit-hook": "^2.0.1",
     "standard": "^3.11.1",
     "uglifyjs": "^2.4.10"
