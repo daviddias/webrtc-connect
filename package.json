@@ -8,11 +8,15 @@
   },
   "scripts": {
     "test": "npm run test-node && npm run test-browser",
+    "codestyle": "./node_modules/.bin/standard --format",
     "test-browser": "zuul -- test/*.js",
     "test-browser-local": "zuul --local -- test/*.js",
     "test-node": "tape test/*.js",
     "build": "./node_modules/.bin/browserify -s rtcc -r ./src/ | ./node_modules/.bin/uglifyjs -m > webrtc-connect.min.js"
   },
+  "pre-commit": [
+    "codestyle"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/diasdavid/webrtc-connect"
@@ -45,6 +49,8 @@
   },
   "devDependencies": {
     "browserify": "^10.2.1",
+    "precommit-hook": "^2.0.1",
+    "standard": "^3.11.1",
     "uglifyjs": "^2.4.10"
   }
 }

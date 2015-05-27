@@ -1,8 +1,6 @@
 var SimplePeer = require('simple-peer');
-var http = require('http');
 var url = require('url');
 var request = require('request');
-var corsify = require('corsify');
 
 exports = module.exports;
 
@@ -13,7 +11,7 @@ function Server(callback) {
         return callback(new Error('Can not create server on the browser'));
     } 
 
-    if (! (this instanceof Server)) {
+    if (!(this instanceof Server)) {
         return new Server(callback);
     }
    
@@ -28,7 +26,7 @@ function Server(callback) {
        
         httpServer.on('request', function(req, res) {
             
-            // CORS should not be done this way :) 
+            // CORS should not be done this way :)
             var origin = req.headers.origin
             res.setHeader('Access-Control-Allow-Origin', origin)
 
