@@ -4,6 +4,7 @@ webrtc-connect
 > Establish WebRTC Data Channels between browser-node and node-node with a TCP/HTTP/WebSockets "createServer/attach" like interface
 
 # Badgers
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 # Why no use WebSockets instead?
 
