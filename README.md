@@ -1,7 +1,7 @@
 webrtc-connect
 ==============
 
-> Establish WebRTC Data Channels between browser-node and node-node with a TCP/HTTP/WebSockets like interface
+> Establish WebRTC Data Channels between browser-node and node-node with a TCP/HTTP/WebSockets "createServer/attach" like interface
 
 # Badgers
 
