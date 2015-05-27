@@ -1,6 +1,6 @@
 {
   "name": "webrtc-connect",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Establish WebRTC Data Channels between browser-node and node-node with a TCP/HTTP/WebSockets like interface",
   "main": "src/index.js",
   "directories": {
