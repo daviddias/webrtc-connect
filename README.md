@@ -10,6 +10,8 @@ webrtc-connect
 
 WebRTC provides a set of different features, one of them being confidentiality, that is, [WebRTC Data Channels are encrypted by default][1] and can't be eavesdropped, while for WebSockets, [we need first to set up TLS/SSL][2].
 
+When it comes to implement authenticity, make sure to reference to ["WebRTC and MITM Attacks" article from on WebRTC Hacks](https://webrtchacks.com/webrtc-and-man-in-the-middle-attacks), as it offers a very good insight.
+
 # Usage
 
 ### Client
@@ -27,7 +29,6 @@ rtcc.connect({url: 'http://localhost', port: 9999}, function(err, channel) {
     channel.on('data', function(data){
         console.log('received message - ', data);
     });
-    
 });
 ```
 
