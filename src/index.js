@@ -27,7 +27,9 @@ function Server (callback) {
     httpServer.on('request', function (req, res) {
       // CORS should not be done this way :)
       var origin = req.headers.origin
-      res.setHeader('Access-Control-Allow-Origin', origin)
+      if ( origin ) {
+        res.setHeader('Access-Control-Allow-Origin', origin)
+      }
 
       res.setHeader('Access-Control-Allow-Methods',
         'POST, OPTIONS')
