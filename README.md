@@ -38,7 +38,9 @@ Boot a fresh http server to establish the connection:
 ```javascript
 var rtcc = require('webrtc-connect');
 
-rtcc.createServer(function(channel){
+rtcc.createServer(function(err, channel){
+    if (err)
+        return console.log('err', err);
     channel.on('data', function(data){
         console.log('received message - ', data);
         channel.send('good and you?');
@@ -51,7 +53,9 @@ Attach to an existing http server of your app:
 ```javascript
 var rtcc = require('webrtc-connect');
 
-rtcc.createServer(function(channel){
+rtcc.createServer(function(err, channel){
+    if (err)
+        return console.log('err', err);
     channel.on('data', function(data){
         console.log('received message - ', data);
         channel.send('good and you?');
